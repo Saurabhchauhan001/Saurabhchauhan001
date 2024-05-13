@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>calculator.com</title>
+        <style>
+            *{
+                
+                margin-top: 5px;
+                
+                box-sizing: border-box;
+                background-color: rgb(255, 254, 254);
+                
+            
+            }
+            .main{
+                border-radius: 10px;
+                width: 300px;
+                margin: auto;
+                background-color: rgb(37, 35, 35);
+                
+            }
+            .buttons{
+               background-color: rgb(37, 35, 35);
+                margin: 5px;
+            
+            }
+            #but{ 
+                width: 60px;
+                height: 40px;
+                margin: 3px;
+                border-radius: 40px;
+                cursor: pointer;
+                font-size: large;
+                opacity: 1;
+                color: rgb(208, 220, 232);
+                border: none;
+                
+            }
+            #inpt{
+                width: 290px;
+                height: 30px;
+                text-align: end;
+                border-radius: 10px;
+                border: none;
+               
+            }
+            #but:active{
+                opacity: 0.5;
+                border-radius: 9px;
+                transition: 0.4s;
+            }
+            #but1{
+                width: 47px;
+                height: 40px;
+                margin: 3px;
+                border-radius: 40px;
+                cursor: pointer;
+                font-size: large;
+                background-color: transparent;
+                border: none;
+                color: rgb(208, 220, 232);
+            }
+            #but1:active{
+                opacity: 0.5;
+                border-radius: 9px;
+                transition: 0.4s;
+            }
+        </style>
+        <script>
+           function test(value) {
+            document.getElementById("inpt").value += value;
+           }
+           function CS() {
+           document.getElementById("inpt").value = "";
+        }
+            function evlt(){
+                var p = document.getElementById("inpt").value;
+                var q = eval(p);
+                document.getElementById("inpt").value = q;
+            }
+            function backspace() {
+            var value = document.getElementById("inpt").value;
+            document.getElementById("inpt").value = value.substr(0, value.length - 1);
+            }
+        </script>
+    </head>
+    <body>
+        <div class="main">
+            <h1 style="text-align: center;">Saurabh</h1>
+         <input  id="inpt" type="text" placeholder="0">
+         <div class="buttons">
+            <button onclick="test('&#10003')" id="but1">&#10003</button>
+            <button onclick="test('&#960')" id="but1">&#960</button>
+            <button onclick="test('&#8963')" id="but1">&#8963</button>
+            <button onclick="test('!')" id="but1">!</button>
+            <button id="but1" style=" background-color: rgba(240, 248, 255, 0.062);">&#8964</button>
+         </div>
+         <div class="buttons">
+            <button id="but" style="background-color: rgb(74, 181, 108);"onclick="CS(' ')" >AC</button>
+            <button id="but" style="background-color: rgb(73, 127, 227);">( )</button>
+            <button id="but" style="background-color: rgb(73, 127, 227);" onclick="test('%')">%</button>
+            <button id="but" style="background-color: rgb(73, 127, 227);" onclick="test('/')">&#xF7</button>
+         </div>
+         <div class="buttons">
+            <button id="but" style="background-color: rgb(56, 57, 58);" onclick="test('7')">7</button>
+            <button value="8" onclick="test('8')" id="but" style="background-color: rgb(56, 57, 58);">8</button>
+            <button id="but" onclick="test('9')" style="background-color: rgb(56, 57, 58);">9</button>
+            <button id="but" onclick="test('*')" style="background-color: rgb(73, 127, 227);">&#10005</button>
+         </div>
+         <div class="buttons">
+            <button id="but" style="background-color: rgb(56, 57, 58);" onclick="test('4')">4</button>
+            <button id="but" style="background-color: rgb(56, 57, 58);" onclick="test('5')">5</button>
+            <button id="but" style="background-color: rgb(56, 57, 58);" onclick="test('6')">6</button>
+            <button id="but" style="background-color: rgb(73, 127, 227);" onclick="test('-')">-</button>
+         </div>
+         <div class="buttons">
+            <button id="but" onclick="test('1')" value="1" style="background-color: rgb(56, 57, 58);">1</button>
+            <button id="but" style="background-color: rgb(56, 57, 58);" onclick="test('2')">2</button>
+            <button id="but" style="background-color: rgb(56, 57, 58);" onclick="test('3')">3</button>
+            <button id="but" style="background-color: rgb(73, 127, 227);" onclick="test('+')">+</button>
+         </div>
+         <div class="buttons">
+            <button id="but" style="background-color: rgb(56, 57, 58);" onclick="test('0')">0</button>
+            <button id="but" style="background-color: rgb(56, 57, 58);" onclick="test('.')">&#x2022</button>
+            <button id="but" style="background-color: rgb(56, 57, 58);" onclick="backspace()">&#9003</button>
+            <button id="but" style="background-color: rgb(11, 89, 234);" onclick="evlt()">=</button>
+         </div>
+        </div>
+    
+    </body>
+</html>
